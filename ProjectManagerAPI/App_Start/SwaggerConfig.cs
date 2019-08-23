@@ -2,6 +2,7 @@ using System.Web.Http;
 using WebActivatorEx;
 using ProjectManagerAPI;
 using Swashbuckle.Application;
+using System.Linq;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 

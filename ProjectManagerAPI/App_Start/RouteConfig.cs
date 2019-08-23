@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
-
+using Swashbuckle.Application;
+using System.Web.Http;
 namespace ProjectManagerAPI
 {
     public class RouteConfig
@@ -12,6 +13,14 @@ namespace ProjectManagerAPI
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
+            routes.MapHttpRoute(
+                name: "swgger_root",
+                routeTemplate: "",
+                defaults: null,
+            constraints: null,
+            handler: new RedirectHandler((message => message.RequestUri.ToString()), "swagger")
+                );
 
             routes.MapRoute(
                 name: "Default",
