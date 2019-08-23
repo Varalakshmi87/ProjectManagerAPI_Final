@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ProjectManager.Business.DTO;
 
 namespace ProjectManager.Business
 {
@@ -16,7 +17,7 @@ namespace ProjectManager.Business
         public Nullable<System.DateTime> EndDate { get; set; }
         public int Priority { get; set; }
         public string Status { get; set; }
-        public Nullable<int> User_Id { get; set; }
+        public Nullable<int> UserId { get; set; }
         public bool IsParentTask { get; set; }
         public string ParentDTOName { get; set; }
         public string ProjectDTOName { get; set; }

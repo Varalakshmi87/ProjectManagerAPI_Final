@@ -12,6 +12,6 @@ namespace ProjectManager.Business
         ProjectDTO GetProjectByProjectId(int projectid);
         bool CreateProject(ProjectDTO project);
         bool UpdateProject(ProjectDTO project, int projectid);
-        bool DleteProject(int projectid);
+        bool DeleteProject(int projectid);
     }
 }

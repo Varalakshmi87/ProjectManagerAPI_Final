@@ -10,8 +10,8 @@ namespace ProjectManager.Data
     {
         List<Project> GetAllProjects();
         Project GetProjectByProjectId(int projectid);
-        bool CreateProject(Project project);
+        int CreateProject(Project project);
         bool UpdateProject(Project project, int projectid);
-        bool DleteProject(int projectid);
+        bool DeleteProject(int projectid);
     }
 }

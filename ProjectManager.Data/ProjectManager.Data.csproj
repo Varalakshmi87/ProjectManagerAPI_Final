@@ -59,6 +59,7 @@
     <Compile Include="Project.cs">
       <DependentUpon>ProjectManagerModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ProjectData.cs" />
     <Compile Include="ProjectManagerModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -78,9 +79,11 @@
     <Compile Include="Task.cs">
       <DependentUpon>ProjectManagerModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="TaskData.cs" />
     <Compile Include="User.cs">
       <DependentUpon>ProjectManagerModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserData.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="ProjectManagerModel.edmx">

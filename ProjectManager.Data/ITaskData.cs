@@ -14,7 +14,7 @@ namespace ProjectManager.Data
         bool DeleteaskById(int taskId);
         bool EndTaskById(int taskId);
         List<ParentTask> GetParentTasks();
-        bool CreateTask(Task task);
-        bool CreatePArentTask(ParentTask parentTask);
+        int CreateTask(Task task);
+        bool CreateParentTask(ParentTask parentTask);
     }
 }
