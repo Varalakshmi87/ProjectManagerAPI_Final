@@ -165,7 +165,7 @@ TestMode = TestMode.Measurement, SkipWarmups = false)]
         public void Create_project()
         {
             ProjectBusiness appBusiness = new ProjectBusiness(_projectData, _userData);
-            var result = appBusiness.CreateProject(new ProjectDTO { ProjectName ="SampleProjec",Start_Date= DateTime.Now,End_Date =DateTime.Now });
+            var result = appBusiness.CreateProject(new ProjectDTO { ProjectName ="SampleProject",Start_Date= DateTime.Now,End_Date =DateTime.Now });
         }
 
 
@@ -177,7 +177,7 @@ TestMode = TestMode.Measurement, SkipWarmups = false)]
         public void Update_the_project()
         {
             ProjectBusiness appBusiness = new ProjectBusiness(_projectData, _userData);
-            var result = appBusiness.UpdateProject(new ProjectDTO { Project_Id=project.Project_ID, ProjectName = "SampleProjec", Start_Date = DateTime.Now, End_Date = DateTime.Now },1);
+            var result = appBusiness.UpdateProject(new ProjectDTO { Project_Id=project.Project_ID, ProjectName = "SampleProject", Start_Date = DateTime.Now, End_Date = DateTime.Now },1);
         }
 
 
