@@ -83,6 +83,18 @@ namespace ProjectManagerAPI.Tests.UnitTests.BusinessTests
 
             Assert.AreEqual("Project", result.ProjectName);
         }
+        [Test]
+        public void CreatProjectfromrepo()
+        {
+            mock.Setup(a => a.CreateProject(It.IsAny<Project>())).Returns(1);
+            mockuser.Setup(a => a.UpdateUserProjectIdTaskId(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<int>())).Returns(true);
+            ProjectBusiness appBusiness = new ProjectBusiness(mock.Object, mockuser.Object);
+
+            var result = appBusiness.CreateProject(new ProjectDTO());
+
+            Assert.AreEqual(true, result);
+        }
+
 
         [Test]
         public void Updateprojectfromrepo()
