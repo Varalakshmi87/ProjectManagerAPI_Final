@@ -34,13 +34,13 @@ namespace ProjectManager.LoadTest
                 {
                     cfg.CreateMap<TaskDTO, Task>()
                     .ForMember(dest => dest.Task1, opt => opt.MapFrom(src => src.Task))
-                    .ForMember(dest => dest.Task_ID, opt => opt.MapFrom(src => src.TaskId))
+                    .ForMember(dest => dest.Task_ID, opt => opt.MapFrom(src => src.TaskID))
                     .ForMember(dest => dest.StartDate, opt => opt.MapFrom(src => src.StartDate))
                     .ForMember(dest => dest.EndDate, opt => opt.MapFrom(src => src.EndDate))
                     .ForMember(dest => dest.Priority, opt => opt.MapFrom(src => src.Priority))
-                    .ForMember(dest => dest.Project_ID, opt => opt.MapFrom(src => src.Project_Id))
+                    .ForMember(dest => dest.Project_ID, opt => opt.MapFrom(src => src.Project_ID))
                     .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status))
-                    .ForMember(dest => dest.Parent_ID, opt => opt.MapFrom(src => src.Parent_Id));
+                    .ForMember(dest => dest.Parent_ID, opt => opt.MapFrom(src => src.Parent_ID));
 
                     cfg.CreateMap<ParentTaskDTO, ParentTask>()
                     .ForMember(dest => dest.Tasks, opt => opt.Ignore());
@@ -49,13 +49,13 @@ namespace ProjectManager.LoadTest
                     cfg.CreateMap<UserDTO, User>();
                     cfg.CreateMap<Task, TaskDTO>()
                     .ForMember(dest => dest.Task, opt => opt.MapFrom(src => src.Task1))
-                    .ForMember(dest => dest.TaskId, opt => opt.MapFrom(src => src.Task_ID))
+                    .ForMember(dest => dest.TaskID, opt => opt.MapFrom(src => src.Task_ID))
                     .ForMember(dest => dest.StartDate, opt => opt.MapFrom(src => src.StartDate))
                     .ForMember(dest => dest.EndDate, opt => opt.MapFrom(src => src.EndDate))
                     .ForMember(dest => dest.Priority, opt => opt.MapFrom(src => src.Priority))
-                    .ForMember(dest => dest.Project_Id, opt => opt.MapFrom(src => src.Project_ID))
+                    .ForMember(dest => dest.Project_ID, opt => opt.MapFrom(src => src.Project_ID))
                     .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status))
-                    .ForMember(dest => dest.Parent_Id, opt => opt.MapFrom(src => src.Parent_ID))
+                    .ForMember(dest => dest.Parent_ID, opt => opt.MapFrom(src => src.Parent_ID))
                     .ForMember(dest => dest.ProjectDTOName, opt => opt.MapFrom(src => src.Project.Project1))
                     .ForMember(dest => dest.ParentDTOName, opt => opt.MapFrom(src => src.ParentTask.Parent_Task));
 
@@ -165,7 +165,7 @@ TestMode = TestMode.Measurement, SkipWarmups = false)]
         public void Create_project()
         {
             ProjectBusiness appBusiness = new ProjectBusiness(_projectData, _userData);
-            var result = appBusiness.CreateProject(new ProjectDTO { ProjectName ="SampleProject",Start_Date= DateTime.Now,End_Date =DateTime.Now });
+            var result = appBusiness.CreateProject(new ProjectDTO { ProjectName ="SampleProject",StartDate= DateTime.Now,EndDate =DateTime.Now });
         }
 
 
@@ -177,7 +177,7 @@ TestMode = TestMode.Measurement, SkipWarmups = false)]
         public void Update_the_project()
         {
             ProjectBusiness appBusiness = new ProjectBusiness(_projectData, _userData);
-            var result = appBusiness.UpdateProject(new ProjectDTO { Project_Id=project.Project_ID, ProjectName = "SampleProject", Start_Date = DateTime.Now, End_Date = DateTime.Now },1);
+            var result = appBusiness.UpdateProject(new ProjectDTO { Project_ID=project.Project_ID, ProjectName = "SampleProject", StartDate = DateTime.Now, EndDate = DateTime.Now },1);
         }
 
 
@@ -252,7 +252,7 @@ TestMode = TestMode.Measurement, SkipWarmups = false)]
                 Priority = 1,
                 StartDate = DateTime.Now.Date,
                 EndDate = DateTime.Now.AddDays(1).Date,
-                TaskId  =  1
+                TaskID  =  1
             };
 
             TaskBusiness appBusiness = new TaskBusiness(_appRepository, _userData);

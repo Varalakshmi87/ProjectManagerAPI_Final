@@ -24,13 +24,13 @@ namespace ProjectManagerAPI.Tests.UnitTests.BusinessTests
             {
                 cfg.CreateMap<TaskDTO, Task>()
                 .ForMember(dest => dest.Task1, opt => opt.MapFrom(src => src.Task))
-                .ForMember(dest => dest.Task_ID, opt => opt.MapFrom(src => src.TaskId))
+                .ForMember(dest => dest.Task_ID, opt => opt.MapFrom(src => src.TaskID))
                 .ForMember(dest => dest.StartDate, opt => opt.MapFrom(src => src.StartDate))
                 .ForMember(dest => dest.EndDate, opt => opt.MapFrom(src => src.EndDate))
                 .ForMember(dest => dest.Priority, opt => opt.MapFrom(src => src.Priority))
-                .ForMember(dest => dest.Project_ID, opt => opt.MapFrom(src => src.Project_Id))
+                .ForMember(dest => dest.Project_ID, opt => opt.MapFrom(src => src.Project_ID))
                 .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status))
-                .ForMember(dest => dest.Parent_ID, opt => opt.MapFrom(src => src.Parent_Id));
+                .ForMember(dest => dest.Parent_ID, opt => opt.MapFrom(src => src.Parent_ID));
 
                 cfg.CreateMap<ParentTaskDTO, ParentTask>()
                 .ForMember(dest => dest.Tasks, opt => opt.Ignore());
@@ -39,13 +39,13 @@ namespace ProjectManagerAPI.Tests.UnitTests.BusinessTests
                 cfg.CreateMap<UserDTO, User>();
                 cfg.CreateMap<Task, TaskDTO>()
                 .ForMember(dest => dest.Task, opt => opt.MapFrom(src => src.Task1))
-                .ForMember(dest => dest.TaskId, opt => opt.MapFrom(src => src.Task_ID))
+                .ForMember(dest => dest.TaskID, opt => opt.MapFrom(src => src.Task_ID))
                 .ForMember(dest => dest.StartDate, opt => opt.MapFrom(src => src.StartDate))
                 .ForMember(dest => dest.EndDate, opt => opt.MapFrom(src => src.EndDate))
                 .ForMember(dest => dest.Priority, opt => opt.MapFrom(src => src.Priority))
-                .ForMember(dest => dest.Project_Id, opt => opt.MapFrom(src => src.Project_ID))
+                .ForMember(dest => dest.Project_ID, opt => opt.MapFrom(src => src.Project_ID))
                 .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status))
-                .ForMember(dest => dest.Parent_Id, opt => opt.MapFrom(src => src.Parent_ID))
+                .ForMember(dest => dest.Parent_ID, opt => opt.MapFrom(src => src.Parent_ID))
                 .ForMember(dest => dest.ProjectDTOName, opt => opt.MapFrom(src => src.Project.Project1))
                 .ForMember(dest => dest.ParentDTOName, opt => opt.MapFrom(src => src.ParentTask.Parent_Task));
 
@@ -103,7 +103,7 @@ namespace ProjectManagerAPI.Tests.UnitTests.BusinessTests
             mockuser.Setup(a => a.UpdateUserProjectIdTaskId(It.IsAny<int>(), It.IsAny<int>(), It.IsAny<int>())).Returns(true); 
             ProjectBusiness appBusiness = new ProjectBusiness(mock.Object, mockuser.Object);
 
-            var result = appBusiness.UpdateProject(new ProjectDTO { Project_Id = 1, ProjectName = "SampleProject", Start_Date = DateTime.Now, End_Date = DateTime.Now }, 1);
+            var result = appBusiness.UpdateProject(new ProjectDTO { Project_ID = 1, ProjectName = "SampleProject", StartDate = DateTime.Now, EndDate = DateTime.Now }, 1);
 
             Assert.AreEqual(true, result);
         }

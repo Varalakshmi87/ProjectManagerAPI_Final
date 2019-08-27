@@ -9,10 +9,10 @@ namespace ProjectManager.Business
 {
    public  class ProjectDTO
     {
-        public int Project_Id { get; set; }
+        public int Project_ID { get; set; }
         public string ProjectName { get; set; }
-        public Nullable<System.DateTime> Start_Date { get; set; }
-        public Nullable<System.DateTime> End_Date { get; set; }
+        public Nullable<System.DateTime> StartDate { get; set; }
+        public Nullable<System.DateTime> EndDate { get; set; }
         public int Priority { get; set; }
         public int? UserId { get; set; }
         public List<UserDTO> lstUser { get; set; }

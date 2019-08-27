@@ -52,7 +52,7 @@ namespace ProjectManager.Data
             List<Project> lstProject = new List<Project>();
             try
             {
-                lstProject = _dbContext.Projects.Include("Users").Include("Task").ToList();
+                lstProject = _dbContext.Projects.Include("Users").Include("Tasks").ToList();
                
             }
             catch (Exception ex)

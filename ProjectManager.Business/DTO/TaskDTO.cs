@@ -9,9 +9,9 @@ namespace ProjectManager.Business
 {
     public class TaskDTO
     {
-        public int TaskId { get; set; }
-        public Nullable<int> Parent_Id { get; set; }
-        public Nullable<int> Project_Id { get; set; }
+        public int TaskID { get; set; }
+        public Nullable<int> Parent_ID { get; set; }
+        public Nullable<int> Project_ID { get; set; }
         public string Task { get; set; }
         public Nullable<System.DateTime> StartDate { get; set; }
         public Nullable<System.DateTime> EndDate { get; set; }

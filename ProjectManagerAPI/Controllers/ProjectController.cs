@@ -15,6 +15,11 @@ namespace ProjectManagerAPI.Controllers
     {
         IProjectBusiness _projectBusiness;
 
+        public ProjectController()
+        {
+           // _projectBusiness = new ProjectBusiness();
+        }
+
         public ProjectController(IProjectBusiness projectBusiness)
         {
             _projectBusiness = projectBusiness;

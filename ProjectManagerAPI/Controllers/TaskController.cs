@@ -15,11 +15,15 @@ namespace ProjectManagerAPI.Controllers
     {
         ITaskBusiness _taskBusiness;
 
+        public TaskController()
+        {
+            
+        }
         public TaskController(ITaskBusiness taskBusiness)
         {
             _taskBusiness = taskBusiness;
         }
-        [Route("get/{id}")]
+        [Route("getAll")]
         public IEnumerable<TaskDTO> GetAll()
         {
             return _taskBusiness.GetTasks();

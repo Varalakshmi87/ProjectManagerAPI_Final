@@ -20,7 +20,7 @@ namespace ProjectManagerAPI.Tests.UnitTests.ControllerTests
         [Test]
         public void GetAllTask()
         {
-            mock.Setup(a => a.GetTasks()).Returns(new List<TaskDTO> { new TaskDTO { TaskId = 1, Task = "SampleTask", Priority = 1, StartDate = DateTime.Now.Date } });
+            mock.Setup(a => a.GetTasks()).Returns(new List<TaskDTO> { new TaskDTO { TaskID = 1, Task = "SampleTask", Priority = 1, StartDate = DateTime.Now.Date } });
             TaskController controller = new TaskController(mock.Object);
 
             IEnumerable<TaskDTO> result = controller.GetAll();
@@ -33,7 +33,7 @@ namespace ProjectManagerAPI.Tests.UnitTests.ControllerTests
         [Test]
         public void GetAllParentTask()
         {
-            mock.Setup(a => a.GetParentTasks()).Returns(new List<ParentTaskDTO> { new ParentTaskDTO { Parent_Id = 1, Parent_Task = "Sample Parent Task" } });
+            mock.Setup(a => a.GetParentTasks()).Returns(new List<ParentTaskDTO> { new ParentTaskDTO { Parent_ID = 1, Parent_Task = "Sample Parent Task" } });
             TaskController controller = new TaskController(mock.Object);
 
             IEnumerable<ParentTaskDTO> result = controller.GetParents();
@@ -46,7 +46,7 @@ namespace ProjectManagerAPI.Tests.UnitTests.ControllerTests
         [Test]
         public void GetTaskByID()
         {
-            mock.Setup(a => a.GetTaskById(1)).Returns(new TaskDTO { TaskId = 1, Task = "SampleTask", Priority = 1, StartDate = DateTime.Now.Date });
+            mock.Setup(a => a.GetTaskById(1)).Returns(new TaskDTO { TaskID = 1, Task = "SampleTask", Priority = 1, StartDate = DateTime.Now.Date });
             TaskController controller = new TaskController(mock.Object);
 
             TaskDTO result = controller.Get(1);
@@ -71,11 +71,11 @@ namespace ProjectManagerAPI.Tests.UnitTests.ControllerTests
         public void UpdateTask()
         {
 
-            var task = new TaskDTO { TaskId = 1, Task = "SampleTask", Priority = 1 };
-            mock.Setup(a => a.UpdateTask(task, task.TaskId)).Returns(true);
+            var task = new TaskDTO { TaskID = 1, Task = "SampleTask", Priority = 1 };
+            mock.Setup(a => a.UpdateTask(task, task.TaskID)).Returns(true);
             TaskController controller = new TaskController(mock.Object);
 
-            var result = controller.update(task, task.TaskId);
+            var result = controller.update(task, task.TaskID);
 
             Assert.AreEqual(true, result);
         }

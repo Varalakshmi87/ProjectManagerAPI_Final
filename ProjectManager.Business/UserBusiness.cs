@@ -12,6 +12,7 @@ namespace ProjectManager.Business
     public class UserBusiness : IUserBusiness
     {
         IUserData _userData;
+
         public UserBusiness(IUserData userData)
         {
             _userData = userData;

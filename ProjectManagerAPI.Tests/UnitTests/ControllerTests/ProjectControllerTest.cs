@@ -20,7 +20,7 @@ namespace ProjectManagerAPI.Tests.UnitTests.ControllerTests
         [Test]
         public void GetProjects()
         {
-            mock.Setup(a => a.GetAllProjects()).Returns(new List<ProjectDTO> { new ProjectDTO { Project_Id = 1, ProjectName = "SampleProject", Priority = 1,Start_Date=DateTime.Now } });
+            mock.Setup(a => a.GetAllProjects()).Returns(new List<ProjectDTO> { new ProjectDTO { Project_ID = 1, ProjectName = "SampleProject", Priority = 1,StartDate=DateTime.Now } });
             ProjectController controller = new ProjectController(mock.Object);
 
             IEnumerable<ProjectDTO> result = controller.Get();
@@ -33,7 +33,7 @@ namespace ProjectManagerAPI.Tests.UnitTests.ControllerTests
         [Test]
         public void GetProjectById()
         {
-            mock.Setup(a => a.GetProjectByProjectId(1)).Returns( new ProjectDTO { Project_Id = 1, ProjectName = "SampleProject", Priority = 1, Start_Date = DateTime.Now });
+            mock.Setup(a => a.GetProjectByProjectId(1)).Returns( new ProjectDTO { Project_ID = 1, ProjectName = "SampleProject", Priority = 1, StartDate = DateTime.Now });
             ProjectController controller = new ProjectController(mock.Object);
 
             var result = controller.Get(1);
@@ -44,7 +44,7 @@ namespace ProjectManagerAPI.Tests.UnitTests.ControllerTests
         [Test]
         public void CreateNewProject()
         {
-            var dto = new ProjectDTO { Project_Id = 1, ProjectName = "SampleProject", Priority = 1, Start_Date = DateTime.Now };
+            var dto = new ProjectDTO { Project_ID = 1, ProjectName = "SampleProject", Priority = 1, StartDate = DateTime.Now };
             mock.Setup(a => a.CreateProject(dto)).Returns(true);
             ProjectController controller = new ProjectController(mock.Object);
 
@@ -57,11 +57,11 @@ namespace ProjectManagerAPI.Tests.UnitTests.ControllerTests
         [Test]
         public void UpdateExistingProject()
         {
-            var dto = new ProjectDTO { Project_Id = 1, ProjectName = "SampleProject", Priority = 1, Start_Date = DateTime.Now };
-            mock.Setup(a => a.UpdateProject(dto,dto.Project_Id)).Returns(true);
+            var dto = new ProjectDTO { Project_ID = 1, ProjectName = "SampleProject", Priority = 1, StartDate = DateTime.Now };
+            mock.Setup(a => a.UpdateProject(dto,dto.Project_ID)).Returns(true);
             ProjectController controller = new ProjectController(mock.Object);
 
-            var result = controller.Put(dto.Project_Id,dto);
+            var result = controller.Put(dto.Project_ID,dto);
 
             Assert.AreEqual(true, result);
         }
@@ -69,7 +69,7 @@ namespace ProjectManagerAPI.Tests.UnitTests.ControllerTests
         [Test]
         public void DeleteExistingProject()
         {
-            var dto = new ProjectDTO { Project_Id = 1, ProjectName = "SampleProject", Priority = 1, Start_Date = DateTime.Now };
+            var dto = new ProjectDTO { Project_ID = 1, ProjectName = "SampleProject", Priority = 1, StartDate = DateTime.Now };
             mock.Setup(a => a.DeleteProject(1)).Returns(true);
             ProjectController controller = new ProjectController(mock.Object);
 

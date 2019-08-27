@@ -39,7 +39,7 @@ namespace ProjectManager.Business
                     {
                         if (task.UserId != null && task.UserId > 0)
                         {
-                            return _userData.UpdateUserProjectIdTaskId(Convert.ToInt32(task.UserId), task.Project_Id, generateTaskId);
+                            return _userData.UpdateUserProjectIdTaskId(Convert.ToInt32(task.UserId), task.Project_ID, generateTaskId);
                         }
                         return true;
                     }
@@ -94,7 +94,7 @@ namespace ProjectManager.Business
                 {
                     if (task.UserId != null && task.UserId > 0)
                     {
-                        return _userData.UpdateUserProjectIdTaskId(Convert.ToInt32(task.UserId), task.Project_Id, task.TaskId);
+                        return _userData.UpdateUserProjectIdTaskId(Convert.ToInt32(task.UserId), task.Project_ID, task.TaskID);
                     }
                     return true;
                 }

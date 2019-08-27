@@ -15,16 +15,21 @@ namespace ProjectManagerAPI.Controllers
     {
         IUserBusiness _userBusiness;
 
+        public UserController()
+        {
+
+        }
+
         public UserController(IUserBusiness userBusiness)
         {
             _userBusiness = userBusiness;
         }
-        public IEnumerable<UserDTO>  Get()
+        public IEnumerable<UserDTO> Get()
         {
-            return _userBusiness.GetAllUsers ();
+            return _userBusiness.GetAllUsers();
         }
 
-        public UserDTO  Get(int id)
+        public UserDTO Get(int id)
         {
             return _userBusiness.GetUserByUserId(id);
         }
@@ -33,9 +38,9 @@ namespace ProjectManagerAPI.Controllers
         {
             return _userBusiness.CreateUser(value);
         }
-        public bool Put(int id,[FromBody]UserDTO value)
+        public bool Put(int id, [FromBody]UserDTO value)
         {
-            return _userBusiness.UpdateUser(value,id);
+            return _userBusiness.UpdateUser(value, id);
         }
         public bool Delete(int id)
         {

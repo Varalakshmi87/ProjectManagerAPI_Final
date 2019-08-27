@@ -8,7 +8,7 @@ namespace ProjectManager.Business
 {
     public class ParentTaskDTO
     {
-        public int Parent_Id { get; set; }
+        public int Parent_ID { get; set; }
         public string Parent_Task { get; set; }
     }
 }
